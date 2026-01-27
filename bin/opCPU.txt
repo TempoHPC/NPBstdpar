@@ -1,0 +1,93 @@
+
+
+ NAS Parallel Benchmarks (NPB3.4-OMP) - SP Benchmark
+
+ No input file inputsp.data. Using compiled defaults
+ Size:   64x  64x  64
+ Iterations:  400    dt:    0.0015000
+ 
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  260
+ Time step  280
+ Time step  300
+ Time step  320
+ Time step  340
+ Time step  360
+ Time step  380
+ Time step  400
+ Verification being performed for class A
+ accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1 0.2479982239930E+01 0.2479982239930E+01 0.7341849998235E-14
+           2 0.1127633796437E+01 0.1127633796437E+01 0.7167596115698E-13
+           3 0.1502897788877E+01 0.1502897788877E+01 0.6899659528907E-13
+           4 0.1421781621170E+01 0.1421781621170E+01 0.4279153763390E-13
+           5 0.2129211303514E+01 0.2129211303514E+01 0.3962826504456E-13
+ Comparison of RMS-norms of solution error
+           1 0.1090014029782E-03 0.1090014029782E-03 0.4515793126138E-12
+           2 0.3734395176929E-04 0.3734395176928E-04 0.1128652899826E-12
+           3 0.5009278540654E-04 0.5009278540654E-04 0.1134950890798E-12
+           4 0.4767109393954E-04 0.4767109393953E-04 0.2082441438078E-12
+           5 0.1362161339921E-03 0.1362161339921E-03 0.5810380626132E-13
+ Verification Successful
+
+
+ SP Benchmark Completed.
+ Class           =                        A
+ Size            =             64x  64x  64
+ Iterations      =                      400
+ Time in seconds =                     1.15
+ Mop/s total     =                 74103.30
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      3.4
+ Compile date    =              27 Jan 2026
+
+ Compile options:
+    F77          = nvfortran
+    FLINK        = $(FC)
+    F_LIB        = (none)
+    F_INC        = (none)
+    FFLAGS       = -O3 -march=native -stdpar=multicore -Minfo
+    FLINKFLAGS   = $(FFLAGS)
+    RAND         = (none)
+
+
+ Please send all errors/feedbacks to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+
+  SECTION   Time (secs)
+  total   :    1.147  (100.00%)
+  rhsx    :    0.088  (  7.64%)
+  rhsy    :    0.065  (  5.65%)
+  rhsz    :    0.156  ( 13.57%)
+  rhs     :    0.432  ( 37.67%)
+    -->  sub-rhs:    0.308  ( 26.86%)
+    --> rest-rhs:    0.124  ( 10.81%)
+  xsolve  :    0.119  ( 10.35%)
+  ysolve  :    0.124  ( 10.84%)
+  zsolve  :    0.279  ( 24.33%)
+    --> sub-zsol:    0.279  ( 24.33%)
+  redist1 :    0.000  (  0.00%)
+  redist2 :    0.000  (  0.00%)
+    -->   redist:    0.000  (  0.00%)
+  txinvr  :    0.027  (  2.34%)
+  pinvr   :    0.010  (  0.87%)
+  ninvr   :    0.013  (  1.12%)
+  tzetar  :    0.082  (  7.19%)
+  add     :    0.061  (  5.31%)
