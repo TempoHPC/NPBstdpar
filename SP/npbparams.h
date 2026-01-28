@@ -23,8 +23,8 @@ c
         parameter (cs3='(none)')
         character cs4*6
         parameter (cs4='(none)')
-        character cs5*42
-        parameter (cs5='-O3 -march=native -stdpar=multicore -Minfo')
+        character cs5*46
+        parameter (cs5='-O3 -march=native -stdpar=multicore -Minfo=...')
         character cs6*9
         parameter (cs6='$(FFLAGS)')
         character cs7*6

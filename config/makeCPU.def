@@ -46,7 +46,7 @@ F_INC =
 #---------------------------------------------------------------------------
 # Global *compile time* flags for Fortran programs
 #---------------------------------------------------------------------------
-FFLAGS	= -O3 -march=native -stdpar=multicore -Minfo
+FFLAGS	= -O3 -march=native -stdpar=multicore -Minfo=stdpar
 
 #---------------------------------------------------------------------------
 # Global *link time* flags. Flags for increasing maximum executable 

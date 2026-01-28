@@ -47,7 +47,7 @@ F_INC =
 # Global *compile time* flags for Fortran programs
 #---------------------------------------------------------------------------
 #FFLAGS	= -O3 -stdpar=gpu -march=native -gpu=cc70 -Minfo
-FFLAGS	= -O3 -stdpar=gpu -Minfo=stdpar -gpu=cc70,fastmath,loadcache:L1,unroll,fma,ptxinfo
+FFLAGS	= -O3 -stdpar=gpu -Minfo=stdpar -gpu=cc70,fastmath,loadcache:L1,unroll,fma
 
 #---------------------------------------------------------------------------
 # Global *link time* flags. Flags for increasing maximum executable 

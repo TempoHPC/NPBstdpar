@@ -30,28 +30,28 @@
  Verification being performed for class A
  accuracy setting for epsilon =  0.1000000000000E-07
  Comparison of RMS-norms of residual
- FAILURE:  1                 NaN 0.2479982239930E+01                 NaN
- FAILURE:  2                 NaN 0.1127633796437E+01                 NaN
- FAILURE:  3                 NaN 0.1502897788877E+01                 NaN
- FAILURE:  4                 NaN 0.1421781621170E+01                 NaN
- FAILURE:  5                 NaN 0.2129211303514E+01                 NaN
+           1 0.2479982239930E+01 0.2479982239930E+01 0.7234408290944E-13
+           2 0.1127633796437E+01 0.1127633796437E+01 0.8408141597261E-13
+           3 0.1502897788877E+01 0.1502897788877E+01 0.4580073777219E-13
+           4 0.1421781621170E+01 0.1421781621170E+01 0.4591500753418E-13
+           5 0.2129211303514E+01 0.2129211303514E+01 0.1564273620180E-13
  Comparison of RMS-norms of solution error
- FAILURE:  1                 NaN 0.1090014029782E-03                 NaN
- FAILURE:  2                 NaN 0.3734395176928E-04                 NaN
- FAILURE:  3                 NaN 0.5009278540654E-04                 NaN
- FAILURE:  4                 NaN 0.4767109393953E-04                 NaN
- FAILURE:  5                 NaN 0.1362161339921E-03                 NaN
- Verification failed
+           1 0.1090014029782E-03 0.1090014029782E-03 0.4151495938374E-12
+           2 0.3734395176929E-04 0.3734395176928E-04 0.1144983890338E-12
+           3 0.5009278540654E-04 0.5009278540654E-04 0.7128952556026E-13
+           4 0.4767109393954E-04 0.4767109393953E-04 0.2180522297619E-12
+           5 0.1362161339921E-03 0.1362161339921E-03 0.5392510786581E-13
+ Verification Successful
 
 
  SP Benchmark Completed.
  Class           =                        A
  Size            =             64x  64x  64
  Iterations      =                      400
- Time in seconds =                     3.10
- Mop/s total     =                 27390.14
+ Time in seconds =                     3.04
+ Mop/s total     =                 27941.39
  Operation type  =           floating point
- Verification    =             UNSUCCESSFUL
+ Verification    =               SUCCESSFUL
  Version         =                      3.4
  Compile date    =              27 Jan 2026
 
@@ -72,22 +72,22 @@
 
 
   SECTION   Time (secs)
-  total   :    3.104  (100.00%)
-  rhsx    :    0.058  (  1.88%)
-  rhsy    :    0.050  (  1.62%)
-  rhsz    :    0.054  (  1.75%)
-  rhs     :    0.220  (  7.09%)
-    -->  sub-rhs:    0.163  (  5.25%)
-    --> rest-rhs:    0.057  (  1.84%)
-  xsolve  :    0.901  ( 29.05%)
-  ysolve  :    0.928  ( 29.89%)
-  zsolve  :    0.933  ( 30.06%)
-    --> sub-zsol:    0.933  ( 30.06%)
+  total   :    3.042  (100.00%)
+  rhsx    :    0.073  (  2.39%)
+  rhsy    :    0.073  (  2.39%)
+  rhsz    :    0.073  (  2.38%)
+  rhs     :    0.276  (  9.07%)
+    -->  sub-rhs:    0.218  (  7.16%)
+    --> rest-rhs:    0.058  (  1.91%)
+  xsolve  :    0.861  ( 28.30%)
+  ysolve  :    0.890  ( 29.24%)
+  zsolve  :    0.895  ( 29.40%)
+    --> sub-zsol:    0.895  ( 29.40%)
   redist1 :    0.000  (  0.00%)
   redist2 :    0.000  (  0.00%)
     -->   redist:    0.000  (  0.00%)
-  txinvr  :    0.030  (  0.98%)
-  pinvr   :    0.020  (  0.64%)
-  ninvr   :    0.020  (  0.64%)
-  tzetar  :    0.034  (  1.09%)
-  add     :    0.020  (  0.65%)
+  txinvr  :    0.030  (  0.99%)
+  pinvr   :    0.020  (  0.65%)
+  ninvr   :    0.020  (  0.65%)
+  tzetar  :    0.034  (  1.11%)
+  add     :    0.020  (  0.67%)
