@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#SBATCH --nodes=1                       # here the number of nodes
+#SBATCH --ntasks=1                      # here total number of mpi tasks
+#SBATCH -p sequana_cpu_dev               # target partition
+#SBATCH --cpus-per-task=1
+#SBATCH --threads-per-core=1
+#SBATCH -J NPB                       # job name
+#SBATCH --time=00:10:00                 # time limit
+#SBATCH --exclusive                     # to have exclusive use of your nodes
+
+echo "Cluster configuration:"
+echo "==="
+echo "Partition: " $SLURM_JOB_PARTITION
+echo "Number of nodes: " $SLURM_NNODES
+echo "Number of MPI processes: " $SLURM_NTASKS " (" $SLURM_NNODES " nodes)"
+echo "Number of MPI processes per node: " $SLURM_NTASKS_PER_NODE
+echo "Number of threads per MPI process: " $SLURM_CPUS_PER_TASK
+
+###################################
+#           COMPILER              #
+###################################
+module load git/2.23_sequana
+module load python/3.9.1_sequana
+module load gcc/9.3_sequana
+module load cmake/3.23.2_sequana
+module load nvhpc/2025_cuda-12.9
+module use /scratch/cenapadrjsd/rpsouto/opt/nvidia/hpc_sdk/modulefiles
+source /scratch/cenapadrjsd/rpsouto/spack/sequana/.spack/v0.18.1/env_spack_user.sh
+spack load /h4xqtl3
+spack load hpcviewer
+export NPB_TIMER_FLAG=1
+export NVLOCALRC=/scratch/cenapadrjsd/rpsouto/opt/nvidia/hpc_sdk/Linux_x86_64/localrc
+
+DIR=$PWD
+
+executable=${1}
+BIN=./${executable}
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+cd $DIR
+
+export OMPI_MCA_opal_warn_on_missing_libcuda=0
+
+hpcrun -t -e REALTIME@5000 \
+${BIN}
+
+hpcstruct ${executable} 
+
+hpcprof \
+-I ../+ \
+    -S ${executable}.hpcstruct hpctoolkit-${executable}-measurements-${SLURM_JOBID}
+
+hpctoolkitresultdir=hpctoolkit/NUMNODES-$SLURM_JOB_NUM_NODES/MPI-${SLURM_NTASKS}_OMP-${SLURM_CPUS_PER_TASK}_JOBID-${SLURM_JOBID}
+
+mkdir -p ${hpctoolkitresultdir}
+mv slurm-${SLURM_JOBID}.out ${hpctoolkitresultdir}/
+mv hpctoolkit-${executable}-database-${SLURM_JOBID} ${hpctoolkitresultdir}/
+mv hpctoolkit-${executable}-measurements-${SLURM_JOBID} ${hpctoolkitresultdir}/
+mv ${executable}.hpcstruct ${hpctoolkitresultdir}/
